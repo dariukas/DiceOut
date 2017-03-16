@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreMotion/CMMotionManager.h>
 
 @interface AppDelegate ()
 
@@ -47,5 +48,36 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//static const NSTimeInterval accelerometerMin = 0.01;
+//- (void)startUpdatesWithSliderValue:(int)sliderValue {
+//
+//    // Determine the update interval
+//    NSTimeInterval delta = 0.005;
+//    NSTimeInterval updateInterval = accelerometerMin + delta * sliderValue;
+//
+//    // Create a CMMotionManager
+//    CMMotionManager *mManager = [(APLAppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
+//    APLAccelerometerGraphViewController * __weak weakSelf = self;
+//
+//    // Check whether the accelerometer is available
+//    if ([mManager isAccelerometerAvailable] == YES) {
+//        // Assign the update interval to the motion manager
+//        [mManager setAccelerometerUpdateInterval:updateInterval];
+//        [mManager startAccelerometerUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+//            [weakSelf.graphView addX:accelerometerData.acceleration.x y:accelerometerData.acceleration.y z:accelerometerData.acceleration.z];
+//            [weakSelf setLabelValueX:accelerometerData.acceleration.x y:accelerometerData.acceleration.y z:accelerometerData.acceleration.z];
+//        }];
+//    }
+//
+//    self.updateIntervalLabel.text = [NSString stringWithFormat:@"%f", updateInterval];
+//}
+//
+//
+//- (void)stopUpdates {
+//    CMMotionManager *mManager = [(APLAppDelegate *)[[UIApplication sharedApplication] delegate] sharedManager];
+//    if ([mManager isAccelerometerActive] == YES) {
+//        [mManager stopAccelerometerUpdates];
+//    }
+//}
 
 @end
